@@ -8,12 +8,12 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect x='15' y='40' width='70' height='45' fill='%231C1B18'/><polygon points='10,42 50,12 90,42' fill='%23A98B5F'/></svg>">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect x='15' y='40' width='70' height='45' fill='%231C1B18'/><polygon points='10,42 50,12 90,42' fill='%238A6B4D'/></svg>">
 <style>
   :root{
     --bg:#F7F4EF; --bg2:#EFEAE2; --card:#FFFFFF;
     --ink:#1C1B18; --muted:#6E6A62; --line:#DDD6CA;
-    --accent:#A98B5F; --accent-dark:#8A6F4A;
+    --accent:#8A6B4D; --accent-dark:#6E5238;
     --serif:'Fraunces',serif; --sans:'Inter',sans-serif;
     --ease:cubic-bezier(.22,1,.36,1);
   }
@@ -55,7 +55,7 @@
   h1 .line{display:block;overflow:hidden}
   h1 .line span{display:inline-block;transform:translateY(110%);animation:rise .95s var(--ease) forwards}
   h1 .line:nth-child(2) span{animation-delay:.15s}
-  h1 em{font-style:italic;color:#E8D9BE}
+  h1 em{font-style:italic;color:#C2A783}
   .hero-sub{max-width:46ch;font-size:1.02rem;color:rgba(255,255,255,.85);opacity:0;animation:rise 1s .55s var(--ease) forwards}
   .hero-cta{margin-top:2.2rem;display:flex;gap:1rem;flex-wrap:wrap;opacity:0;animation:rise 1s .75s var(--ease) forwards}
   .hero-cta .btn{border-color:rgba(255,255,255,.6);color:#fff}
@@ -133,6 +133,7 @@
   .house-card p{color:var(--muted);font-size:.92rem;margin-top:.7rem}
   .house-card .specs{display:flex;gap:1.2rem;margin-top:1.1rem;padding-top:1.1rem;border-top:1px solid var(--line);font-size:.78rem;color:var(--muted);letter-spacing:.05em}
   .house-card .tag{position:absolute;top:1rem;left:1rem;z-index:3;background:rgba(247,244,239,.9);backdrop-filter:blur(8px);font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;padding:.4rem .85rem;border-radius:100px;font-weight:500}
+  .cardlink{position:absolute;inset:0;z-index:4}
 
   /* ---------- Process ---------- */
   #ferli{background:var(--bg2)}
@@ -281,11 +282,13 @@
   </div>
   <div class="houses-grid">
     <article class="house-card reveal">
-      <div class="img"><img src="https://d8j0ntlcm91z4.cloudfront.net/user_3EjOmB7g5KO77t42Tjgsutyfq1m/hf_20260702_104132_af677848-7c51-48d8-b2a7-ae24070c23f0.png" alt="KUBO 15m² hús" loading="lazy"></div>
+      <a class="cardlink" href="kubo15.html" aria-label="Skoða KUBO 15"></a>
+      <div class="tag">Skoða húsið</div>
+      <div class="img"><img src="k15-hero.jpg" alt="KUBO 15m² hús við fjörð í ljósaskiptum" loading="lazy"></div>
       <div class="body">
         <h3>KUBO 15 <small>15 m²</small></h3>
-        <p>Nett og snjallt rými sem hentar fullkomlega sem gestahús, vinnustofa eða útleigueining.</p>
-        <div class="specs"><span>Stúdíó</span><span>·</span><span>Byggingarleyfisfrítt*</span></div>
+        <p>Fullbúið stúdíó með eldhúsi og baðherbergi. Hentar fullkomlega sem gestahús, vinnustofa eða útleigueining.</p>
+        <div class="specs"><span>Stúdíó + bað</span><span>·</span><span>Sjá nánar →</span></div>
       </div>
     </article>
     <article class="house-card reveal" data-delay="1">
