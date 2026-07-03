@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="is">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>KUBO 91 | Fjölskylduhús með yfirbyggðri verönd | 91 m²</title>
+<meta name="description" content="KUBO 91 er 91 m² heilsárshús: opið alrými, tvö til þrjú svefnherbergi og yfirbyggð verönd. Byggt á raunverulegri grunnmynd, hannað fyrir íslenskt veðurfar.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect x='15' y='30' width='70' height='55' fill='%23171512'/><rect x='20' y='38' width='28' height='40' fill='%23C2A783'/></svg>">
+<style>
+  :root{
+    --bg:#F2EFE9; --paper:#FBFAF7; --bg2:#E9E4DB;
+    --ink:#171512; --ink2:#2A261F; --muted:#6E6860; --line:#DAD3C7;
+    --oak:#8A6B4D; --oak-deep:#6E5238; --oak-light:#C2A783; --stone:#CFC9BF;
+    --serif:'Fraunces',serif; --sans:'Inter',sans-serif;
+    --ease:cubic-bezier(.22,1,.36,1);
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{background:var(--bg);color:var(--ink);font-family:var(--sans);font-weight:300;line-height:1.65;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+  ::selection{background:var(--oak);color:#fff}
+  h1,h2,h3{font-family:var(--serif);font-weight:400;line-height:1.08}
+  img{display:block;max-width:100%}
+  a{color:inherit;text-decoration:none}
+
+  nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:1.1rem clamp(1.5rem,5vw,4rem);transition:all .5s var(--ease)}
+  nav.scrolled{background:rgba(242,239,233,.85);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);border-bottom:1px solid var(--line);padding-top:.75rem;padding-bottom:.75rem}
+  .logo{font-family:var(--serif);font-size:1.55rem;letter-spacing:.35em;font-weight:600}
+  .logo span{color:var(--oak-light)}
+  nav.scrolled .logo span{color:var(--oak)}
+  .nav-links{display:flex;gap:2.4rem;align-items:center}
+  .nav-links a{font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);position:relative;transition:color .3s}
+  .nav-links a:hover{color:var(--ink)}
+  nav:not(.scrolled) .nav-links a:not(.btn){color:rgba(255,255,255,.75)}
+  nav:not(.scrolled) .nav-links a:not(.btn):hover{color:#fff}
+  nav:not(.scrolled) .logo{color:#fff}
+  .btn{display:inline-block;padding:.85rem 1.9rem;border:1px solid var(--ink);border-radius:100px;font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;font-weight:500;transition:all .35s var(--ease);cursor:pointer;background:transparent;color:var(--ink)}
+  .btn:hover{background:var(--ink);color:var(--bg)}
+  .btn.solid{background:var(--ink);color:var(--bg)}
+  .btn.solid:hover{background:var(--oak-deep);border-color:var(--oak-deep);color:#fff}
+  nav:not(.scrolled) .btn{border-color:rgba(255,255,255,.6);color:#fff}
+  nav:not(.scrolled) .btn:hover{background:#fff;color:var(--ink)}
+  @media(max-width:820px){.nav-links a:not(.btn){display:none}}
+
+  header{position:relative;min-height:100svh;display:flex;align-items:flex-end;overflow:hidden}
+  .hero-media{position:absolute;inset:0}
+  .hero-media img{width:100%;height:100%;object-fit:cover;transform:scale(1.08);animation:heroZoom 8s var(--ease) forwards}
+  @keyframes heroZoom{to{transform:scale(1)}}
+  .hero-media::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(15,13,10,.5) 0%,rgba(15,13,10,.05) 40%,rgba(15,13,10,.72) 100%)}
+  .hero-inner{position:relative;z-index:2;width:100%;padding:0 clamp(1.5rem,5vw,4rem) clamp(3rem,7vh,5rem);color:#fff}
+  .crumb{font-size:.75rem;letter-spacing:.22em;text-transform:uppercase;color:rgba(255,255,255,.65);opacity:0;animation:rise 1s .2s var(--ease) forwards}
+  .crumb a:hover{color:#fff}
+  h1{font-size:clamp(3.4rem,9vw,7.5rem);margin:.5rem 0 .8rem;opacity:0;animation:rise 1s .35s var(--ease) forwards}
+  h1 small{font-size:.35em;font-family:var(--sans);font-weight:300;letter-spacing:.25em;text-transform:uppercase;color:var(--oak-light);vertical-align:middle;margin-left:.5em}
+  .hero-sub{max-width:52ch;font-size:1.05rem;color:rgba(255,255,255,.85);opacity:0;animation:rise 1s .5s var(--ease) forwards}
+  .hero-cta{margin-top:2rem;display:flex;gap:1rem;flex-wrap:wrap;opacity:0;animation:rise 1s .65s var(--ease) forwards}
+  .hero-cta .btn{border-color:rgba(255,255,255,.6);color:#fff}
+  .hero-cta .btn:hover{background:#fff;color:var(--ink);border-color:#fff}
+  .hero-cta .btn.solid{background:var(--oak);border-color:var(--oak);color:#fff}
+  .hero-cta .btn.solid:hover{background:var(--oak-light);border-color:var(--oak-light);color:var(--ink)}
+  @keyframes rise{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:translateY(0)}}
+
+  .statbar{background:var(--ink);color:var(--bg);display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:1px}
+  .statbar>div{padding:1.8rem 1.2rem;text-align:center;background:var(--ink)}
+  .statbar b{font-family:var(--serif);font-size:clamp(1.6rem,2.6vw,2.2rem);font-weight:500;display:block;color:#fff}
+  .statbar small{font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:rgba(242,239,233,.55)}
+  .statbar b em{font-style:normal;color:var(--oak-light)}
+
+  section{padding:clamp(4.5rem,10vh,8rem) clamp(1.5rem,5vw,4rem)}
+  .kicker{font-size:.75rem;letter-spacing:.3em;text-transform:uppercase;color:var(--oak-deep);display:flex;align-items:center;gap:.9rem;margin-bottom:1.2rem}
+  .kicker::before{content:'';width:44px;height:1px;background:var(--oak)}
+  h2{font-size:clamp(2rem,4.6vw,3.4rem);max-width:22ch}
+  .reveal{opacity:0;transform:translateY(42px);transition:opacity 1s var(--ease),transform 1s var(--ease)}
+  .reveal.visible{opacity:1;transform:none}
+  .reveal[data-delay="1"]{transition-delay:.12s}.reveal[data-delay="2"]{transition-delay:.24s}.reveal[data-delay="3"]{transition-delay:.36s}
+
+  .intro{display:grid;grid-template-columns:1fr 1fr;gap:clamp(2.5rem,6vw,6rem);align-items:center;max-width:1300px;margin:0 auto}
+  .intro p{color:var(--muted);margin-top:1.3rem;max-width:50ch}
+  .intro .imgwrap{border-radius:4px;overflow:hidden;aspect-ratio:4/3}
+  .intro .imgwrap img{width:100%;height:100%;object-fit:cover;transition:transform 1.4s var(--ease)}
+  .intro .imgwrap:hover img{transform:scale(1.05)}
+  .ticklist{margin-top:1.6rem;display:flex;flex-direction:column;gap:.7rem}
+  .ticklist span{display:flex;gap:.8rem;align-items:baseline;font-size:.95rem;color:var(--ink2)}
+  .ticklist span::before{content:'';width:7px;height:7px;border-radius:50%;background:var(--oak);flex:0 0 7px;transform:translateY(-1px)}
+  @media(max-width:900px){.intro{grid-template-columns:1fr}}
+
+  #skipulag{background:var(--paper);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .plan-wrap{max-width:1300px;margin:0 auto;display:grid;grid-template-columns:1.25fr .75fr;gap:clamp(2.5rem,5vw,5rem);align-items:center}
+  @media(max-width:900px){.plan-wrap{grid-template-columns:1fr}}
+  .plan-svg{background:#fff;border:1px solid var(--line);border-radius:6px;padding:clamp(1rem,3vw,2.5rem);box-shadow:0 30px 60px -30px rgba(23,21,18,.15)}
+  .plan-svg svg{width:100%;height:auto;display:block}
+  .room{fill:#F5F2EC;stroke:#171512;stroke-width:3;transition:fill .3s}
+  .room.hot{fill:#E9DFCE}
+  .plan-label{font-family:'Inter',sans-serif;font-size:26px;fill:#171512;font-weight:500}
+  .plan-dim{font-family:'Inter',sans-serif;font-size:22px;fill:#8A8378}
+  .plan-legend{display:flex;flex-direction:column;gap:.9rem;margin-top:2rem}
+  .plan-legend button{display:flex;justify-content:space-between;align-items:center;background:transparent;border:1px solid var(--line);border-radius:6px;padding:1rem 1.2rem;font-family:var(--sans);font-size:.95rem;color:var(--ink);cursor:pointer;transition:all .3s var(--ease);text-align:left}
+  .plan-legend button small{color:var(--muted);font-size:.8rem}
+  .plan-legend button:hover,.plan-legend button.hot{border-color:var(--oak);background:#F5EFE5}
+  .plan-note{margin-top:1.2rem;font-size:.8rem;color:var(--muted)}
+
+  .gallery-head{max-width:1300px;margin:0 auto 2.5rem}
+  .gallery{max-width:1300px;margin:0 auto;display:grid;grid-template-columns:repeat(12,1fr);gap:1.2rem}
+  .gitem{position:relative;border-radius:5px;overflow:hidden;cursor:pointer}
+  .gitem img{width:100%;height:100%;object-fit:cover;transition:transform 1.2s var(--ease)}
+  .gitem:hover img{transform:scale(1.06)}
+  .gitem figcaption{position:absolute;left:1rem;bottom:.9rem;z-index:2;color:#fff;font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;text-shadow:0 1px 8px rgba(0,0,0,.5)}
+  .gitem::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,transparent 60%,rgba(15,13,10,.45))}
+  .g1{grid-column:span 7;aspect-ratio:16/10}
+  .g2{grid-column:span 5;aspect-ratio:4/3.5}
+  .g3{grid-column:span 6;aspect-ratio:4/3}
+  .g4{grid-column:span 6;aspect-ratio:4/3}
+  @media(max-width:820px){.g1,.g2,.g3,.g4{grid-column:span 12}}
+
+  .specs-wrap{max-width:1300px;margin:0 auto;display:grid;grid-template-columns:.8fr 1.2fr;gap:clamp(2.5rem,6vw,6rem);align-items:start}
+  @media(max-width:900px){.specs-wrap{grid-template-columns:1fr}}
+  .speclist{display:grid;grid-template-columns:1fr 1fr;gap:0 2.5rem}
+  @media(max-width:640px){.speclist{grid-template-columns:1fr}}
+  .spec{display:flex;justify-content:space-between;gap:1rem;padding:1.05rem 0;border-bottom:1px solid var(--line);font-size:.93rem}
+  .spec span{color:var(--muted)}
+  .spec b{font-weight:500;text-align:right}
+
+  #tilbod{background:var(--ink);color:var(--bg)}
+  #tilbod .kicker{color:var(--oak-light)}
+  #tilbod h2{color:#fff}
+  .contact-grid{max-width:1300px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:clamp(2.5rem,6vw,6rem)}
+  .contact-grid>div>p{color:rgba(242,239,233,.65);margin-top:1.4rem;max-width:44ch}
+  .contact-info{margin-top:2.4rem;display:flex;flex-direction:column;gap:.9rem;font-size:.95rem;color:rgba(242,239,233,.8)}
+  .contact-info a{border-bottom:1px solid rgba(255,255,255,.25);transition:border-color .3s}
+  .contact-info a:hover{border-color:var(--oak-light)}
+  form{display:flex;flex-direction:column;gap:1.1rem}
+  .field{display:flex;flex-direction:column;gap:.45rem}
+  .field label{font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:rgba(242,239,233,.55)}
+  .field input,.field select,.field textarea{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.16);border-radius:4px;padding:.95rem 1.1rem;color:#fff;font-family:var(--sans);font-size:.95rem;transition:border-color .3s;outline:none}
+  .field input:focus,.field select:focus,.field textarea:focus{border-color:var(--oak-light)}
+  .field select option{color:var(--ink)}
+  .row2{display:grid;grid-template-columns:1fr 1fr;gap:1.1rem}
+  form .btn{border-color:var(--oak);color:#fff;background:var(--oak);align-self:flex-start;margin-top:.4rem}
+  form .btn:hover{background:var(--oak-light);border-color:var(--oak-light);color:var(--ink)}
+  .form-note{font-size:.78rem;color:rgba(242,239,233,.4)}
+  @media(max-width:900px){.contact-grid{grid-template-columns:1fr}.row2{grid-template-columns:1fr}}
+
+  footer{background:#0F0E0B;color:rgba(242,239,233,.55);padding:3rem clamp(1.5rem,5vw,4rem);display:flex;justify-content:space-between;align-items:center;gap:1.5rem;flex-wrap:wrap;font-size:.82rem}
+  footer .logo{font-size:1.2rem;color:#fff}
+
+  .lightbox{position:fixed;inset:0;background:rgba(12,11,9,.92);z-index:200;display:none;align-items:center;justify-content:center;padding:4vmin;cursor:zoom-out}
+  .lightbox.open{display:flex}
+  .lightbox img{max-width:100%;max-height:100%;border-radius:4px}
+</style>
+</head>
+<body>
+
+<nav id="nav">
+  <a class="logo" href="index.html">KUB<span>O</span></a>
+  <div class="nav-links">
+    <a href="#um91">Um húsið</a>
+    <a href="#skipulag">Skipulag</a>
+    <a href="grunnmyndir.html">Grunnmyndir</a>
+    <a href="#myndir">Myndir</a>
+    <a href="#tilbod" class="btn">Fáðu tilboð</a>
+  </div>
+</nav>
+
+<header>
+  <div class="hero-media"><img src="k91-hero.jpg" alt="KUBO 91 með yfirbyggðri verönd í ljósaskiptunum"></div>
+  <div class="hero-inner">
+    <p class="crumb"><a href="index.html">Húsin</a> / KUBO 91</p>
+    <h1>KUBO 91 <small>Fjölskylduhús · 91 m²</small></h1>
+    <p class="hero-sub">Heilsárshús með opnu alrými, tveimur til þremur svefnherbergjum og yfirbyggðri verönd við gaflinn. Hannað fyrir íslenskt veðurfar.</p>
+    <div class="hero-cta">
+      <a href="#tilbod" class="btn solid">Fáðu tilboð</a>
+      <a href="#skipulag" class="btn">Skoða skipulagið</a>
+    </div>
+  </div>
+</header>
+
+<div class="statbar">
+  <div><b><em>91</em> m²</b><small>Heildarstærð</small></div>
+  <div><b>13,5 × 6,8 m</b><small>Grunnflötur</small></div>
+  <div><b>2–3</b><small>Svefnherbergi</small></div>
+  <div><b>Opið alrými</b><small>Stofa · Eldhús · Borðstofa</small></div>
+  <div><b>Verönd</b><small>Yfirbyggð við gaflinn</small></div>
+</div>
+
+<section id="um91">
+  <div class="intro">
+    <div>
+      <p class="kicker reveal">Um húsið</p>
+      <h2 class="reveal" data-delay="1">Hannað í kringum<br>fjölskyldulífið.</h2>
+      <p class="reveal" data-delay="2">KUBO 91 skiptist í svefnálmu og bjart alrými þar sem eldhús, borðstofa og stofa flæða saman. Við gaflinn er yfirbyggð verönd sem nýtist í öllum veðrum, beintengd alrýminu um rennihurð.</p>
+      <p class="reveal" data-delay="2">Grunnmyndin byggir á raunverulegri teikningu hússins: 13,5 x 6,8 metrar með hjónaherbergi, barnaherbergi með tveimur rúmum og fullbúnu baðherbergi. Húsið er framleitt innandyra við kjöraðstæður og afhent tilbúið til uppsetningar.</p>
+      <div class="ticklist reveal" data-delay="3">
+        <span>Opið alrými með útgengi á yfirbyggða verönd</span>
+        <span>Tvö til þrjú svefnherbergi</span>
+        <span>Baðherbergi með sturtu og sér gestasalerni</span>
+        <span>Yfirbyggð verönd við gafl hússins</span>
+      </div>
+    </div>
+    <div class="imgwrap reveal" data-delay="1"><img src="k91-living.jpg" alt="Alrými KUBO 91" loading="lazy"></div>
+  </div>
+</section>
+
+<section id="skipulag">
+  <div class="plan-wrap">
+    <div class="plan-svg reveal">
+      <svg viewBox="0 0 1500 810" xmlns="http://www.w3.org/2000/svg" aria-label="Grunnmynd KUBO 91">
+        <rect x="60" y="60" width="1350" height="680" fill="none" stroke="#171512" stroke-width="14"/>
+        <g id="r-svefn" class="room-g">
+          <rect class="room" x="67" y="67" width="354" height="290"/>
+          <rect x="90" y="90" width="90" height="180" rx="8" fill="none" stroke="#171512" stroke-width="3"/>
+          <rect x="200" y="90" width="90" height="180" rx="8" fill="none" stroke="#171512" stroke-width="3"/>
+          <text class="plan-label" x="88" y="335" font-size="24">Svefnherbergi</text>
+        </g>
+        <g id="r-hjona" class="room-g">
+          <rect class="room" x="67" y="357" width="354" height="376"/>
+          <rect x="100" y="430" width="200" height="240" rx="8" fill="none" stroke="#171512" stroke-width="3"/>
+          <text class="plan-label" x="88" y="405" font-size="24">Hjónaherbergi</text>
+        </g>
+        <g id="r-bad" class="room-g">
+          <rect class="room" x="421" y="67" width="243" height="290"/>
+          <rect x="440" y="85" width="90" height="90" rx="6" fill="none" stroke="#171512" stroke-width="3"/>
+          <ellipse cx="600" cy="130" rx="28" ry="38" fill="none" stroke="#171512" stroke-width="3"/>
+          <rect x="450" y="230" width="70" height="55" rx="8" fill="none" stroke="#171512" stroke-width="3"/>
+          <text class="plan-label" x="432" y="335" font-size="22">Baðherbergi</text>
+        </g>
+        <g id="r-alrymi" class="room-g">
+          <rect class="room" x="421" y="357" width="243" height="376"/>
+          <rect class="room" x="664" y="67" width="516" height="666"/>
+          <rect x="690" y="80" width="440" height="75" fill="none" stroke="#171512" stroke-width="3"/>
+          <circle cx="780" cy="117" r="20" fill="none" stroke="#171512" stroke-width="3"/>
+          <circle cx="990" cy="105" r="12" fill="none" stroke="#171512" stroke-width="3"/>
+          <circle cx="1022" cy="128" r="12" fill="none" stroke="#171512" stroke-width="3"/>
+          <rect x="800" y="260" width="220" height="110" fill="none" stroke="#171512" stroke-width="3"/>
+          <circle cx="840" cy="240" r="15" fill="none" stroke="#171512" stroke-width="3"/>
+          <circle cx="910" cy="240" r="15" fill="none" stroke="#171512" stroke-width="3"/>
+          <circle cx="980" cy="240" r="15" fill="none" stroke="#171512" stroke-width="3"/>
+          <circle cx="840" cy="390" r="15" fill="none" stroke="#171512" stroke-width="3"/>
+          <circle cx="910" cy="390" r="15" fill="none" stroke="#171512" stroke-width="3"/>
+          <circle cx="980" cy="390" r="15" fill="none" stroke="#171512" stroke-width="3"/>
+          <rect x="720" y="520" width="200" height="80" rx="6" fill="none" stroke="#171512" stroke-width="3"/>
+          <rect x="980" y="500" width="90" height="150" rx="6" fill="none" stroke="#171512" stroke-width="3"/>
+          <text class="plan-label" x="690" y="700" font-size="24">Eldhús · Borðstofa · Stofa</text>
+          <text class="plan-label" x="432" y="700" font-size="22">Forstofa</text>
+        </g>
+        <g stroke="#8A8378" stroke-width="2" stroke-dasharray="12 10" fill="none">
+          <rect x="1200" y="95" width="185" height="610"/>
+        </g>
+        <text class="plan-dim" x="1225" y="420" font-size="24">Verönd</text>
+        <rect x="1173" y="300" width="14" height="160" fill="#fff"/>
+        <line x1="1180" y1="300" x2="1180" y2="460" stroke="#171512" stroke-width="3"/>
+        <rect x="500" y="726" width="120" height="14" fill="#fff"/>
+        <rect x="120" y="53" width="180" height="14" fill="#fff"/>
+        <rect x="120" y="726" width="180" height="14" fill="#fff"/>
+        <rect x="740" y="53" width="220" height="14" fill="#fff"/>
+        <text class="plan-dim" x="60" y="30">13,5 m</text>
+        <line x1="60" y1="42" x2="1410" y2="42" stroke="#8A8378" stroke-width="2"/>
+        <text class="plan-dim" x="1470" y="380" transform="rotate(90 1470 380)">6,8 m</text>
+        <line x1="1440" y1="60" x2="1440" y2="740" stroke="#8A8378" stroke-width="2"/>
+      </svg>
+    </div>
+    <div>
+      <p class="kicker reveal">Skipulag</p>
+      <h2 class="reveal" data-delay="1">Raunveruleg grunnmynd,<br>skýrt flæði</h2>
+      <div class="plan-legend reveal" data-delay="2">
+        <button data-room="r-alrymi">Alrými <small>Eldhús, borðstofa og stofa með útgengi</small></button>
+        <button data-room="r-hjona">Hjónaherbergi <small>Rúmgott við suðurglugga</small></button>
+        <button data-room="r-svefn">Svefnherbergi <small>Tvö rúm, valkvætt tvö herbergi</small></button>
+        <button data-room="r-bad">Baðherbergi <small>Sturta, salerni og vaskur</small></button>
+      </div>
+      <p class="plan-note reveal" data-delay="3">Grunnmyndin byggir á teikningu hússins. Endanlegt skipulag er útfært með hverjum kaupanda.</p>
+    </div>
+  </div>
+</section>
+
+<section id="myndir">
+  <div class="gallery-head">
+    <p class="kicker reveal">Myndir</p>
+    <h2 class="reveal" data-delay="1">Björt rými,<br>hlý efni.</h2>
+  </div>
+  <div class="gallery">
+    <figure class="gitem g1 reveal"><img src="k91-kitchen.jpg" alt="Eldhús og borðstofa KUBO 91" loading="lazy"><figcaption>Eldhús og borðstofa</figcaption></figure>
+    <figure class="gitem g2 reveal" data-delay="1"><img src="k91-svefn.jpg" alt="Svefnherbergi KUBO 91" loading="lazy"><figcaption>Hjónaherbergið</figcaption></figure>
+    <figure class="gitem g3 reveal"><img src="k91-bath.jpg" alt="Baðherbergi KUBO 91" loading="lazy"><figcaption>Baðherbergið</figcaption></figure>
+    <figure class="gitem g4 reveal" data-delay="1"><img src="k91-eldhus.jpg" alt="Eldhús KUBO 91, dekkri útfærsla" loading="lazy"><figcaption>Dekkri útfærslan</figcaption></figure>
+  </div>
+</section>
+
+<section id="innifalid">
+  <div class="specs-wrap">
+    <div>
+      <p class="kicker reveal">Tæknilýsing</p>
+      <h2 class="reveal" data-delay="1">Innifalið í hverju húsi</h2>
+    </div>
+    <div class="speclist reveal" data-delay="2">
+      <div class="spec"><span>Heildarstærð</span><b>91 m²</b></div>
+      <div class="spec"><span>Grunnflötur</span><b>13,5 × 6,8 m</b></div>
+      <div class="spec"><span>Lofthæð</span><b>2,5 m</b></div>
+      <div class="spec"><span>Þak</span><b>Flatt, dúkklætt</b></div>
+      <div class="spec"><span>Klæðning</span><b>Lerki, ljóst eða dökkt</b></div>
+      <div class="spec"><span>Gluggar</span><b>Þrefalt gler, rennihurðir</b></div>
+      <div class="spec"><span>Svefnherbergi</span><b>2, valkvætt 3</b></div>
+      <div class="spec"><span>Baðherbergi</span><b>Sturta, salerni og vaskur</b></div>
+      <div class="spec"><span>Eldhús</span><b>Fullbúið með eyju</b></div>
+      <div class="spec"><span>Verönd</span><b>Yfirbyggð við gaflinn</b></div>
+      <div class="spec"><span>Hitun</span><b>Gólfhiti, rafmagn</b></div>
+      <div class="spec"><span>Afhending</span><b>Tilbúið til uppsetningar</b></div>
+    </div>
+  </div>
+</section>
+
+<section id="tilbod">
+  <div class="contact-grid">
+    <div>
+      <p class="kicker reveal">Fáðu tilboð</p>
+      <h2 class="reveal" data-delay="1">Áhugi á KUBO 91?</h2>
+      <p class="reveal" data-delay="2">Segðu okkur frá lóðinni þinni og þörfum fjölskyldunnar og við sendum þér tilboð og ráðgjöf án skuldbindinga.</p>
+      <div class="contact-info reveal" data-delay="3">
+        <span><a href="mailto:kubo@kubo.is">kubo@kubo.is</a></span>
+        <span><a href="tel:+3545551234">+354 555 1234</a></span>
+        <span>Reykjavík, Ísland</span>
+      </div>
+    </div>
+    <form onsubmit="event.preventDefault();this.innerHTML='<p style=&quot;font-family:var(--serif);font-size:1.6rem&quot;>Takk fyrir! Við höfum samband fljótlega.</p>'">
+      <div class="row2">
+        <div class="field"><label for="nafn">Nafn</label><input id="nafn" type="text" required></div>
+        <div class="field"><label for="netfang">Netfang</label><input id="netfang" type="email" required></div>
+      </div>
+      <div class="field"><label for="herbergi">Fjöldi svefnherbergja</label>
+        <select id="herbergi"><option>2 svefnherbergi</option><option>3 svefnherbergi</option><option>Óviss</option></select>
+      </div>
+      <div class="field"><label for="skilabod">Skilaboð</label><textarea id="skilabod" rows="4"></textarea></div>
+      <button class="btn" type="submit">Senda fyrirspurn</button>
+      <p class="form-note">* Þetta er sýnisútgáfa, formið sendir ekki gögn.</p>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <a class="logo" href="index.html">KUB<span style="color:var(--oak-light)">O</span></a>
+  <span>© 2026 KUBO ehf. · Heilsárshús fyrir íslenskar aðstæður</span>
+  <span><a href="index.html">kubo.is</a></span>
+</footer>
+
+<div class="lightbox" id="lightbox"><img src="" alt=""></div>
+
+<script>
+const nav=document.getElementById('nav');
+addEventListener('scroll',()=>nav.classList.toggle('scrolled',scrollY>40),{passive:true});
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');io.unobserve(e.target)}}),{threshold:.12});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+document.querySelectorAll('.plan-legend button').forEach(b=>{
+  const room=document.getElementById(b.dataset.room);
+  const rects=room.querySelectorAll('.room');
+  const on=()=>{b.classList.add('hot');rects.forEach(r=>r.classList.add('hot'))};
+  const off=()=>{b.classList.remove('hot');rects.forEach(r=>r.classList.remove('hot'))};
+  b.addEventListener('mouseenter',on);b.addEventListener('mouseleave',off);
+  room.addEventListener('mouseenter',on);room.addEventListener('mouseleave',off);
+});
+
+const lb=document.getElementById('lightbox'),lbImg=lb.querySelector('img');
+document.querySelectorAll('.gitem img').forEach(img=>{
+  img.parentElement.addEventListener('click',()=>{lbImg.src=img.src;lb.classList.add('open')});
+});
+lb.addEventListener('click',()=>lb.classList.remove('open'));
+addEventListener('keydown',e=>{if(e.key==='Escape')lb.classList.remove('open')});
+</script>
+</body>
+</html>
