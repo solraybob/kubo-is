@@ -367,7 +367,7 @@
       <p class="reveal" data-delay="2">Segðu okkur frá verkefninu þínu og við sendum þér tilboð og ráðgjöf án skuldbindinga.</p>
       <div class="contact-info reveal" data-delay="3">
         <span><a href="mailto:kubo@kubo.is">kubo@kubo.is</a></span>
-        <span><a href="tel:+3545551234">+354 555 1234</a></span>
+        <span><a href="tel:+3546638500">+354 663 8500</a></span>
         <span>Reykjavík, Ísland</span>
       </div>
     </div>
@@ -509,11 +509,20 @@ const glbCache={};
 function loadGLB(key){
   if(glbCache[key])return Promise.resolve(glbCache[key]);
   return new Promise((res,rej)=>loader.load(GLBS[key],g=>{
-    g.scene.traverse(o=>{if(o.isMesh){o.castShadow=true;o.receiveShadow=true}});
+    g.scene.traverse(o=>{
+      if(o.isMesh){
+        o.castShadow=true;o.receiveShadow=true;
+        if(key==='k96'&&o.material){
+          if(o.material.map){o.material.emissiveMap=o.material.map;}
+          o.material.emissive=new THREE.Color(0x666666);
+          o.material.needsUpdate=true;
+        }
+      }
+    });
     glbCache[key]=g.scene;res(g.scene);
   },undefined,rej));
 }
-function prepared(key,targetW){
+function prepared(key,targetW,rot){
   return loadGLB(key).then(src=>{
     const obj=src.clone(true);
     const box=new THREE.Box3().setFromObject(obj);
@@ -523,7 +532,7 @@ function prepared(key,targetW){
     const box2=new THREE.Box3().setFromObject(obj);
     const c=box2.getCenter(new THREE.Vector3());
     obj.position.x-=c.x;obj.position.z-=c.z;obj.position.y-=box2.min.y;
-    const g=new THREE.Group();g.add(obj);g.rotation.y=Math.PI;
+    const g=new THREE.Group();g.add(obj);g.rotation.y=(rot===undefined?Math.PI:rot);
     return g;
   });
 }
@@ -533,7 +542,7 @@ const MODELS=[
  {name:'KUBO 18',size:'18 m²',rooms:'Stúdíó + verönd',use:'Heilsárshús',glb:'k18',w:6.5,cam:14},
  {name:'KUBO 83',size:'83 m²',rooms:'2–3 svefnherbergi',use:'Fjölskylduhús',glb:'k83',w:12.0,cam:25},
  {name:'KUBO 91',size:'91 m²',rooms:'2–3 svefnherbergi',use:'Fjölskylduhús',glb:'k91',w:13.5,cam:27},
- {name:'KUBO 96',size:'96 m²',rooms:'3 svefnherbergi',use:'Framtíðarheimili',glb:'k96',w:13.0,cam:27}
+ {name:'KUBO 96',size:'96 m²',rooms:'3 svefnherbergi',use:'Framtíðarheimili',glb:'k96',w:13.0,cam:27,rot:0}
 ];
 
 let house=null,targetCam=12,camDist=12,switchToken=0;
@@ -545,7 +554,7 @@ function setModel(i){
   document.getElementById('metaRooms').textContent=m.rooms;
   document.getElementById('metaUse').textContent=m.use;
   const tok=++switchToken;
-  prepared(m.glb,m.w).then(g=>{
+  prepared(m.glb,m.w,m.rot).then(g=>{
     if(tok!==switchToken)return;
     if(house)scene.remove(house);
     house=g;
