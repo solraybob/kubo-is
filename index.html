@@ -474,7 +474,7 @@ scene.add(snow);
 /* northern lights: waving additive ribbons */
 const auroras=[];
 function makeAurora(y,z,hue,phase){
-  const geo=new THREE.PlaneGeometry(90,13,44,4);
+  const geo=new THREE.PlaneGeometry(110,16,44,4);
   const count=geo.attributes.position.count;
   const colors=new Float32Array(count*3);
   for(let i=0;i<count;i++){
@@ -492,9 +492,9 @@ function makeAurora(y,z,hue,phase){
   scene.add(mesh);auroras.push(mesh);
   return mesh;
 }
-makeAurora(20,-34,0.38,0);
-makeAurora(24,-42,0.42,2.1);
-makeAurora(17,-28,0.52,4.2);
+makeAurora(13,-26,0.38,0);
+makeAurora(16,-33,0.42,2.1);
+makeAurora(10,-21,0.52,4.2);
 
 /* photoreal GLB models from the real house photos */
 const GLBS={
